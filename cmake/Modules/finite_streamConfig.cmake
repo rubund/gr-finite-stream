@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_FINITE_STREAM finite_stream)
+
+FIND_PATH(
+    FINITE_STREAM_INCLUDE_DIRS
+    NAMES finite_stream/api.h
+    HINTS $ENV{FINITE_STREAM_DIR}/include
+        ${PC_FINITE_STREAM_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    FINITE_STREAM_LIBRARIES
+    NAMES gnuradio-finite_stream
+    HINTS $ENV{FINITE_STREAM_DIR}/lib
+        ${PC_FINITE_STREAM_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(FINITE_STREAM DEFAULT_MSG FINITE_STREAM_LIBRARIES FINITE_STREAM_INCLUDE_DIRS)
+MARK_AS_ADVANCED(FINITE_STREAM_LIBRARIES FINITE_STREAM_INCLUDE_DIRS)
+
