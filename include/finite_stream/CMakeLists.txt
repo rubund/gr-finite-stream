@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    concatenate.h DESTINATION include/finite_stream
+    concatenate.h
+    count_items.h DESTINATION include/finite_stream
 )

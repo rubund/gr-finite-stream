@@ -27,6 +27,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND finite_stream_sources
     concatenate_impl.cc
+    count_items_impl.cc
 )
 
 set(finite_stream_sources "${finite_stream_sources}" PARENT_SCOPE)

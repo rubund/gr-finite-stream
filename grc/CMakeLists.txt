@@ -18,5 +18,6 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    finite_stream_concatenate.xml DESTINATION share/gnuradio/grc/blocks
+    finite_stream_concatenate.xml
+    finite_stream_count_items.xml DESTINATION share/gnuradio/grc/blocks
 )
