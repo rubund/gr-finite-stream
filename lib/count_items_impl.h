@@ -34,6 +34,7 @@ namespace gr {
         size_t d_itemsize;
         bool d_done;
         int d_samples_left;
+        bool d_ended;
 
      public:
       count_items_impl(size_t itemsize);

@@ -44,9 +44,9 @@ namespace gr {
     count_items_impl::count_items_impl(size_t itemsize)
       : gr::block("count_items",
               gr::io_signature::make(1, 1, sizeof(itemsize)),
-              gr::io_signature::make(0, 0, sizeof(int))),
+              gr::io_signature::make(1, 1, sizeof(int))),
             d_count(0), d_itemsize(itemsize), d_done(false),
-            d_samples_left(0)
+            d_samples_left(0), d_ended(false)
     {}
 
     /*
@@ -64,7 +64,7 @@ namespace gr {
       int current_ninput_items_required;
 
       current_ninput_items_required = noutput_items;
-      if(!d_done) {
+      {
         gr::block_detail *d_block_detail;
         d_block_detail = this->detail().get();
         gr::thread::scoped_lock guard(*d_block_detail->input(0)->mutex());
@@ -74,10 +74,14 @@ namespace gr {
           d_done = true;
           d_samples_left = input_items_available;
           current_ninput_items_required = 0;
-          printf("Count: %d\n", d_count + input_items_available);
         }
       }
-      ninput_items_required[0] = noutput_items;
+      if (!d_done) {
+          ninput_items_required[0] = current_ninput_items_required;
+      }
+      else {
+          ninput_items_required[0] = 0;
+      }
 
     }
 
@@ -91,14 +95,24 @@ namespace gr {
       int *out = (int *) output_items[0];
       int consumed = 0;
 
-      int count = ninput_items[0];
+
+
+      if(d_ended)
+        return -1;
+
+      int count = std::min(noutput_items, ninput_items[0]);
 
       d_count += count;
 
       consumed = count;
       consume_each (consumed);
 
-      return 0;
+      if (d_done && consumed == d_samples_left) {
+          printf("Count: %d\n", d_count);
+          d_ended = true;
+      }
+
+      return consumed;
     }
 
   } /* namespace finite_stream */

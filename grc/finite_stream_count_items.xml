@@ -59,8 +59,8 @@
        * type
        * vlen
        * optional (set to 1 for optional inputs) -->
-  <!--<source>
+  <source>
     <name>out</name>
     <type>int</type>
-  </source>-->
+  </source>
 </block>
