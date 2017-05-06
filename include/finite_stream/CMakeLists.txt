@@ -23,5 +23,6 @@
 install(FILES
     api.h
     concatenate.h
-    count_items.h DESTINATION include/finite_stream
+    count_items.h
+    repeat_stream.h DESTINATION include/finite_stream
 )

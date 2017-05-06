@@ -10,6 +10,7 @@
 %{
 #include "finite_stream/concatenate.h"
 #include "finite_stream/count_items.h"
+#include "finite_stream/repeat_stream.h"
 %}
 
 
@@ -17,3 +18,5 @@
 GR_SWIG_BLOCK_MAGIC2(finite_stream, concatenate);
 %include "finite_stream/count_items.h"
 GR_SWIG_BLOCK_MAGIC2(finite_stream, count_items);
+%include "finite_stream/repeat_stream.h"
+GR_SWIG_BLOCK_MAGIC2(finite_stream, repeat_stream);

@@ -19,5 +19,6 @@
 
 install(FILES
     finite_stream_concatenate.xml
-    finite_stream_count_items.xml DESTINATION share/gnuradio/grc/blocks
+    finite_stream_count_items.xml
+    finite_stream_repeat_stream.xml DESTINATION share/gnuradio/grc/blocks
 )
