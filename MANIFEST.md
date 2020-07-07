@@ -7,6 +7,8 @@ author:
 copyright_owner:
   - Ruben Undheim
 license:
+gr_supported_version:
+  - v3.8
 #repo: # Put the URL of the repository here, or leave blank for default
 #website: <module_website> # If you have a separate project website, put it here
 #icon: <icon_url> # Put a URL to a square image here that will be used as an icon on CGRAN
