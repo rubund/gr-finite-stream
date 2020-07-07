@@ -26,7 +26,7 @@ description here (python/__init__.py).
 # import swig generated symbols into the finite_stream namespace
 try:
 	# this might fail if the module is python-only
-	from finite_stream_swig import *
+	from .finite_stream_swig import *
 except ImportError:
 	pass
 
