@@ -1,8 +1,8 @@
 /*! \mainpage
 
-Welcome to the GNU Radio FINITE_STREAM Block
+Welcome to the GNU Radio DAB Block
 
-This is the intro page for the Doxygen manual generated for the FINITE_STREAM
+This is the intro page for the Doxygen manual generated for the DAB
 block (docs/doxygen/other/main_page.dox). Edit it to add more detailed
 documentation about the new GNU Radio modules contained in this
 project.

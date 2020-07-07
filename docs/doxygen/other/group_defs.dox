@@ -1,6 +1,6 @@
 /*!
- * \defgroup block GNU Radio FINITE_STREAM C++ Signal Processing Blocks
- * \brief All C++ blocks that can be used from the FINITE_STREAM GNU Radio
+ * \defgroup block GNU Radio DAB C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the DAB GNU Radio
  *        module are listed here or in the subcategories below.
  *
  */
